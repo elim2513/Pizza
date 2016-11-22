@@ -1,10 +1,10 @@
-class pizza{
+class Pizza{
   constructor(s,mt,vt){
     this.size=s;
     this.meatToppings=mt;
     this.veggieToppings=vt;
   }
-  sizecost(){
+  sizeCost(){
     if(this.size == "Small"){
       return 7.99;
     }
@@ -26,11 +26,11 @@ toppingCost(top){
     }
     if(top == "veggie"){
       toppingCost= this.veggieToppings.length*0.50;
-      return 0.50;
+      return toppingCost;
     }
   }
 price(){
-  return this.costsize() + this.toppingCost("meat") + this.toppingCost("veggie")
+  return this.sizeCost() + this.toppingCost("meat") + this.toppingCost("veggie");
 }
 static promotionDeal(pizza,percent){
   let decimal = percent/100;
@@ -38,7 +38,7 @@ static promotionDeal(pizza,percent){
 }
 }
 
-let mypizza = new Pizza() ("Medium",["sausage","pepperoni"],["mushroom","blackolives","greenpeppers"]);
+let mypizza = new Pizza("Medium",["sausage","pepperoni"],["mushroom","blackolives","greenpeppers"]);
 
-console.log(mypizza instanceof Pizza);
+
 console.log(mypizza.price());
